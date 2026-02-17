@@ -1,0 +1,194 @@
+.page_wrapper {
+  width: 100%;
+}
+
+/* card spacing */
+.section_wrapper {
+  margin-bottom: 2rem;
+}
+
+#about.section_wrapper {
+  margin-top: 3.5rem;
+}
+
+/* base card */
+.section_card {
+  width: 100%;
+  box-shadow: none;
+  border-radius: 18px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+
+/* give normal cards vertical breathing room */
+.section_card:not(.section_card--hero) {
+  padding: 3.75rem 0;
+}
+
+.section_card .mat-mdc-card-header {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.section_card .mat-mdc-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.section_text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.85;
+  margin-top: 0.9rem;
+  text-align: center;
+}
+
+/* constrain + side padding for content */
+.section_card .mat-mdc-card-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* a bit more side padding for large desktop */
+@media (min-width: 1200px) {
+  .section_card .mat-mdc-card-content {
+    padding: 0 5rem;
+  }
+}
+
+/* pill buttons */
+.mdc-button.mat-mdc-raised-button {
+  border-radius: 999px;
+}
+
+/* hero card */
+.section_card--hero {
+  position: relative;
+  text-align: center;
+  padding: 7.25rem 6.5rem 4.75rem 6.5rem;
+}
+
+/* remove inner material padding so our card padding is the only padding */
+.section_card--hero .mat-mdc-card-header,
+.section_card--hero .mat-mdc-card-content,
+.section_card--hero .mat-mdc-card-actions {
+  padding: 0;
+  margin: 0;
+}
+
+/* hero title */
+.section_card--hero .mat-mdc-card-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  margin-bottom: 1.75rem;
+}
+
+/* hero text width */
+.section_card--hero .section_text {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* center button */
+.section_card--hero .mat-mdc-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+  padding-bottom: 0.75rem;
+}
+
+/* hero button */
+.section_card--hero .mdc-button.mat-mdc-raised-button {
+  background-color: #3f587f;
+  color: #ffffff;
+  padding: 0.95rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.section_card--hero .mdc-button.mat-mdc-raised-button:hover {
+  filter: brightness(1.07);
+}
+
+/* avatar */
+.hero_avatar_wrap {
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  padding: 8px;
+}
+
+.hero_avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7);
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .section_card:not(.section_card--hero) {
+    padding: 3.25rem 0;
+  }
+
+  .section_card--hero {
+    padding: 6.75rem 3.25rem 4.25rem 3.25rem;
+  }
+
+  .section_card .mat-mdc-card-content {
+    padding: 0 2rem;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .section_wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  #about.section_wrapper {
+    margin-top: 1.75rem;
+  }
+
+  .section_card:not(.section_card--hero) {
+    padding: 2.5rem 0;
+  }
+
+  .section_card--hero {
+    padding: 5.75rem 1.5rem 3.25rem 1.5rem;
+  }
+
+  .section_card--hero .mat-mdc-card-title {
+    font-size: 2.1rem;
+  }
+
+  .section_text {
+    font-size: 1rem;
+  }
+
+  .section_card .mat-mdc-card-content {
+    padding: 0 1.25rem;
+  }
+
+  .section_card--hero .mdc-button.mat-mdc-raised-button {
+    padding: 0.85rem 2.4rem;
+    font-size: 1.02rem;
+  }
+
+  .hero_avatar_wrap {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+  }
+}

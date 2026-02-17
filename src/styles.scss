@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// Global Angular Material theme – now DARK
+html {
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+:root {
+  --page-width: 1100px;
+  --page-bg: #19202e;
+  // --card-bg: #304060;
+  --card-bg: #090c18;
+  --card-border: rgba(255, 255, 255, 0.06);
+  --text-main: #e5edf7;
+  --text-muted: #9aa4bc;
+  --accent: #ff6b5a;
+}
+
+body {
+  color-scheme: dark;
+  background-color: var(--page-bg);
+  color: var(--text-main);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+}
+
+html, body { height: 100%; }
+
+.m_top20 {  margin-top: 20px; }
+.m_top40 {  margin-top: 40px; }
+.m_top80 {  margin-top: 80px; }
+.m_top100 {  margin-top: 100px; }
+
+.centered {
+  display: flex;
+  justify-content: center;
+}

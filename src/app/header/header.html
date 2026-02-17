@@ -1,0 +1,42 @@
+<mat-toolbar class="main_toolbar">
+  <div class="toolbar_inner">
+
+    <div class="nav_container">
+      <a mat-button
+         class="nav_btn"
+         routerLink="/"
+         routerLinkActive="is_active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="nav_icon">home</mat-icon>
+        <span class="nav_label">Home</span>
+      </a>
+
+      <a mat-button
+         class="nav_btn"
+         routerLink="/about"
+         routerLinkActive="is_active">
+        <mat-icon class="nav_icon">description</mat-icon>
+        <span class="nav_label">Resume</span>
+      </a>
+
+      <a mat-button
+         class="nav_btn"
+         routerLink="/projects"
+         routerLinkActive="is_active">
+        <mat-icon class="nav_icon">code</mat-icon>
+        <span class="nav_label">Projects</span>
+      </a>
+    </div>
+
+    <a
+      class="header_linkedin"
+      href="https://www.linkedin.com/in/brian-musinyan-a22b7959/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+    >
+      <i class="devicon-linkedin-plain"></i>
+    </a>
+
+  </div>
+</mat-toolbar>

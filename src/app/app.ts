@@ -1,32 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
 import { ApiService } from './services/api.service';
-import { JsonPipe } from '@angular/common';
+
+import { Header } from './header/header';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [JsonPipe],
-  template: `
-    <main class="page">
-      <h1>Tecxonic Portfolio</h1>
-      <p>Simple connectivity check with backend:</p>
-
-      @if (status) {
-        <p>Backend status: {{ status | json }}</p>
-      } @else if (error) {
-        <p class="error">Error calling API: {{ error }}</p>
-      }
-    </main>
-  `,
-  styles: [`
-    .page {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      padding: 2rem;
-    }
-    .error {
-      color: #c00;
-    }
-  `]
+  imports: [
+    RouterOutlet,
+    Header,
+    Footer
+  ],
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class AppComponent implements OnInit {
   status: any = null;

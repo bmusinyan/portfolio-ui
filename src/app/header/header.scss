@@ -1,0 +1,132 @@
+$header-bg: rgba(9, 12, 23, 0.98);
+$header-border: rgba(255, 255, 255, 0.06);
+$text-color: #e5edf7;
+$text-muted: #9aa4bc;
+
+.main_toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: $header-bg;
+  border-bottom: 1px solid $header-border;
+  backdrop-filter: blur(10px);
+
+  --toolbar-height: 68px;
+  min-height: var(--toolbar-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3 columns: spacer | centered nav | right icon */
+.toolbar_inner {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.nav_container {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;
+}
+
+/* Bigger nav */
+.nav_btn {
+  min-width: auto;
+  color: $text-muted;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+.nav_btn:hover {
+  color: $text-color;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Remove underline indicator you added earlier */
+.nav_btn::after {
+  content: none !important;
+}
+
+.nav_icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+/* Active page */
+.nav_btn.is_active {
+  color: $text-color;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Right LinkedIn (no underline) */
+.header_linkedin {
+  grid-column: 3;
+  justify-self: end;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none !important;
+
+  font-size: 1.5rem;
+  color: $text-muted;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.header_linkedin:hover {
+  color: #0a66c2;
+  transform: translateY(-1px);
+}
+
+/* Remove any default underline from icons inside */
+.header_linkedin i {
+  text-decoration: none !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .main_toolbar {
+    --toolbar-height: 60px;
+  }
+
+  .nav_label {
+    display: none;
+  }
+
+  .nav_container {
+    gap: 0.75rem;
+  }
+
+  .nav_btn {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .nav_icon {
+    margin-right: 0;
+  }
+
+  .header_linkedin {
+    font-size: 1.35rem;
+  }
+}

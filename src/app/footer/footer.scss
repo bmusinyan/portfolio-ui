@@ -1,0 +1,9 @@
+.footer_inner {
+  /* logical footer height */
+  --footer-height: 64px;
+  min-height: var(--footer-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;}

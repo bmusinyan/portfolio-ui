@@ -1,0 +1,81 @@
+<div class="resume">
+  <header class="resume_header">
+    <div class="resume_avatar_wrap">
+      <img src="assets/me.png" alt="Brian Musinyan" class="resume_avatar"/>
+    </div>
+
+    <h1 class="resume_name">
+      {{ name }}
+    </h1>
+
+    <p class="resume_meta">
+      <span>{{ title }}</span>
+      <span>{{ location }}</span>
+      <span>{{ email }}</span>
+    </p>
+  </header>
+
+  <div class="resume_body">
+    <aside class="resume_left">
+      <section class="side_block">
+        <h4>Skills</h4>
+        <ul class="side_list">
+          @for (s of skills; track s) {
+            <li>{{ s }}</li>
+          }
+        </ul>
+      </section>
+
+      <section class="side_block">
+        <h4>Languages</h4>
+
+        @for (l of languages; track l.name) {
+          <div class="lang_row">
+            <p class="lang_label">{{ l.name }}</p>
+            <mat-progress-bar mode="determinate" [value]="l.value"></mat-progress-bar>
+          </div>
+        }
+      </section>
+    </aside>
+
+    <article class="resume_right">
+      <h4 class="section_title">
+        <mat-icon>person</mat-icon>
+        Profile
+      </h4>
+      <section class="section_body">
+        @for (p of profile; track p) {
+          <p class="para">{{ p }}</p>
+        }
+      </section>
+
+      <h4 class="section_title">
+        <mat-icon>work</mat-icon>
+        Employment History
+      </h4>
+      <section class="section_body">
+        <div class="bullet">
+          <span class="dot"></span>
+          <div class="bullet_content">
+            <div class="bullet_head">Automai Corporation</div>
+            <div class="bullet_sub">May 2013 – Present</div>
+          </div>
+        </div>
+      </section>
+
+      <h4 class="section_title">
+        <mat-icon>school</mat-icon>
+        Education
+      </h4>
+      <section class="section_body">
+        <div class="bullet">
+          <span class="dot"></span>
+          <div class="bullet_content">
+            <div class="bullet_head">University of California Los Angeles</div>
+            <div class="bullet_sub">Bachelor of Science in Computer Science • March 2013</div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</div>

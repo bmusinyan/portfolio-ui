@@ -1,0 +1,151 @@
+.experience_container {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.experience_intro {
+  max-width: 900px;
+  margin: 0 auto 2.25rem auto;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+}
+
+/* language/framework chips row */
+.tech_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 auto 2.75rem auto;
+  max-width: 980px;
+}
+
+.tech_chip {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* grid */
+.experience_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.75rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.experience_item {
+  text-align: center;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0.9rem 0 0.75rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin: 0;
+  }
+}
+
+/* icon wrapper (prevents cropping + controls size) */
+.experience_icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.10);
+}
+
+/* hard-set mat-icon size so it never explodes */
+.experience_icon mat-icon {
+  width: 34px;
+  height: 34px;
+  font-size: 34px;
+  line-height: 34px;
+  overflow: visible;
+}
+
+.tech_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.25rem 3rem;
+  margin: 2.25rem auto 3rem auto;
+  max-width: 1000px;
+}
+
+.tech_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+}
+
+.tech_icon {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech_icon i {
+  font-size: 5rem;  /* bigger icons */
+  line-height: 1;
+  // color: rgba(235, 240, 255, 0.9);
+}
+
+.tech_label {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;  /* slightly smaller text */
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tech_grid {
+    gap: 1.75rem 1.25rem;
+  }
+
+  .tech_icon i {
+    font-size: 3rem;
+  }
+
+  .tech_label {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* responsive */
+@media (max-width: 1024px) {
+  .experience_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .experience_grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .experience_intro {
+    font-size: 1rem;
+  }
+
+  .tech_chip {
+    font-size: 0.9rem;
+  }
+}
