@@ -1,27 +1,41 @@
+/* about.scss */
+
+:host {
+  display: block;
+  overflow-x: hidden; /* prevents any accidental horizontal scroll */
+}
+
+/* Make sizing predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .resume {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 32px 18px 60px;
+
+  /* Equal left/right padding on ALL screen sizes */
+  padding: 3.25rem 1.5rem 2.75rem;
+
   color: var(--text-main);
 }
 
 .resume_header {
   text-align: center;
-  padding: 26px 18px 22px;
+  margin-bottom: 1.75rem;
 }
 
 .resume_avatar_wrap {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 20px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
   border-radius: 50%;
   padding: 6px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  box-shadow:
-    0 0 0 4px rgba(255,255,255,0.03),
-    0 20px 50px rgba(0,0,0,0.5);
 }
 
 .resume_avatar {
@@ -30,116 +44,120 @@
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .resume_name {
-  margin: 0;
-  font-size: 2.2rem;
+  margin: 0.25rem 0 0.5rem;
+  font-size: 2.6rem;
   font-weight: 800;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 .resume_meta {
-  margin: 10px 0 14px;
+  padding: 5px;
   color: var(--text-muted);
-  font-size: 1rem;
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  font-size: 1.05rem;
 
-.resume_meta span + span {
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
-  padding-left: 10px;
+  /* Wrap nicely on mobile instead of overflowing */
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .resume_body {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 22px;
-  margin-top: 12px;
+  grid-template-columns: 380px 1fr;
+  gap: 1.5rem;
+
+  /* Prevent children from forcing overflow */
+  min-width: 0;
 }
 
 .resume_left,
 .resume_right {
-  border-radius: 18px;
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
+  min-width: 0; /* key: allows grid items to shrink instead of overflow */
 }
 
-.resume_left {
-  padding: 18px 18px 22px;
-}
-
+.side_block,
 .resume_right {
-  padding: 18px 18px 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: none;
+
+  /* More breathing room top/bottom */
+  padding: 1.6rem 1.6rem 1.8rem;
 }
 
 .side_block + .side_block {
-  margin-top: 18px;
+  margin-top: 1.25rem;
 }
 
 .side_block h4 {
-  margin: 0 0 10px;
-  font-size: 1.1rem;
+  margin: 0 0 0.9rem;
+  font-size: 1.25rem;
   font-weight: 800;
 }
 
 .side_list {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 1.1rem;
   color: var(--text-muted);
-  line-height: 1.7;
 }
 
-.lang_row + .lang_row {
-  margin-top: 10px;
+.side_list li {
+  margin: 0.4rem 0;
+}
+
+.lang_row {
+  margin-top: 0.85rem;
 }
 
 .lang_label {
-  margin: 0 0 6px;
+  margin: 0 0 0.4rem;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
+}
+
+/* Make progress bars never overflow */
+mat-progress-bar {
+  width: 100%;
 }
 
 .section_title {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.section_title + .section_body {
-  margin-top: 10px;
+  gap: 0.65rem;
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 850;
 }
 
 .section_body {
-  border-left: 2px solid rgba(255, 255, 255, 0.16);
-  padding-left: 16px;
-  margin: 10px 0 18px;
+  margin: 0.9rem 0 1.35rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.08);
 }
 
 .para {
-  margin: 0 0 10px;
+  margin: 0 0 0.9rem;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .bullet {
   display: grid;
-  grid-template-columns: 10px 1fr;
-  gap: 12px;
+  grid-template-columns: 12px 1fr;
+  gap: 0.75rem;
   align-items: start;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  margin-top: 6px;
-  border-radius: 999px;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.45rem;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.55);
 }
 
@@ -148,24 +166,52 @@
 }
 
 .bullet_sub {
+  margin-top: 0.2rem;
   color: var(--text-muted);
-  margin-top: 4px;
-}
-
-/* Material overrides (scoped) */
-:host ::ng-deep .mat-mdc-progress-bar {
-  height: 8px;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-:host ::ng-deep .mat-mdc-progress-bar .mdc-linear-progress__bar-inner {
-  border-top-width: 8px;
 }
 
 /* Responsive */
-@media (max-width: 960px) {
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .resume {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .resume_body {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+/* Mobile: single column + equal margins */
+@media (max-width: 820px) {
+  .resume {
+    padding: 2.25rem 1rem 2.25rem; /* equal L/R */
+  }
+
+  .resume_name {
+    font-size: 2.1rem;
+  }
+
   .resume_body {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .side_block,
+  .resume_right {
+    padding: 1.35rem 1.25rem 1.5rem; /* more comfortable on mobile */
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .resume {
+    padding: 2rem 0.85rem 2rem;
+  }
+
+  .resume_avatar_wrap {
+    width: 104px;
+    height: 104px;
   }
 }
